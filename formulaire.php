@@ -1,39 +1,50 @@
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/style_perso.css">
+<?php
 
-	<?php
-    include("classes/formadmin.php");
-    ?>
-    
+session_start();
+
+//CONTIENT LE TEMPLATE HTML ET LE INCLUDE DE LA CLASSE FORMADMIN
+include("inc/template.php");
+include("classes/Courriel.php");
+?>
+
+<title>Formulaire administrateur</title>
 </head>
+
 
 <body>
 
-            <?php
+<?php
 
-            
-            $ceform = new formadmin();
-            
+echo '<pre>'.print_r($_POST,true).'</pre>';
 
+        // INSTANCIATION D'UN NOUVEL OBJET POUVANT FAIRE APPEL AU FORMULAIRE DEFINI DANS LA CLASSE FORMADMIN
+        $ceform = new formadmin();
+        
 
-
-            echo '<pre>'.print_r($_POST,true).'</pre>';
-            echo '<pre>'.print_r($_GET,true).'</pre>';
-
-
+        
+        
 
 
+        // CONNEXION A MA BASE DE DONNEE FORMADMIN GRACE A MA CLASSE FORMADMIN
+        $bdd=$ceform->baseDeDonnee();
+
+
+        // MODELE DE REQUETE TRIPLE (REQUETE SQL - RECHERCHE OU EXECUTION DE LA REQUETE - AFFICHAGE DE LA LIGNE DE RESULTAT)
+
+        // $reqsql="SELECT * FROM t_eleve WHERE nomEleve='MANETTE'";
+        // $res=$bdd->query($reqinsert) or die('impossible');  
+        // $ligne=$rech->Fetch(PDO::FETCH_ASSOC);
 
 
 
-            // remplissage du formulaire en fonction des critères de recherche
-            $dateinsc=$categoryid=$id=$action=$nom=$prenom=$adresse=$tel1=$tel2=$tel3=$tel4=$email=$prevnom=$prevprenom=$prevadresse=$prevcpville=$prevetel=$category=$infocomp='';
+    //    echo '<pre>'.print_r($_POST,true).'</pre>';
+    //    echo '<pre>'.print_r($_GET,true).'</pre>';
+
+
+
+        // remplissage du formulaire en fonction des critères de recherche
+        $dateinsc=$categoryid=$id=$action=$nom=$prenom=$adresse=$tel1=$tel2=$tel3=$tel4=$email=$prevnom=$prevprenom=$prevadresse=$prevcpville=$prevetel=$category=$infocomp='';
             
 
 
@@ -46,6 +57,51 @@
         // de update. Il y a deux tours de passe-passe pour plus de sécurité : 
         // exemple: $_POST ('telephone1') donne sa valeur à $tel1 
         // puis  $tel1 donne sa valeur à telephone1Eleve, champs de la base de données.
+
+
+
+
+        if (isset($_POST['courriel']))
+        {
+            if (isset($_POST['email']))
+            {
+                $email=$_POST['email'];
+            }
+            
+        // INSTANCIATION D'UN NOUVEL OBJET FORMULAIRE DE COURRIEL
+        $formcourriel = new Courriel('raphael.italiano@wanadoo.fr',$email);
+        }
+
+        if (isset($_GET['i']))
+        {
+
+            $recupid=$_GET['i'];
+            $bdd=$ceform->baseDeDonnee();
+            $reqget="SELECT * FROM t_eleve WHERE idEleve=$recupid";
+            $rst=$bdd->query($reqget) or die('modification impossible');
+            $ligne=$rst->Fetch(PDO::FETCH_ASSOC);
+            $nb=$rst->rowCount();
+
+
+            if ($nb>0) 
+            {
+                $id=$ligne['idEleve'];
+                $nom=$ligne['nomEleve'];
+                $prenom=$ligne['prenomEleve'];
+                $adresse=$ligne['adresseEleve'];
+                $tel1=$ligne['telephone1Eleve'];
+                $tel2=$ligne['telephone2Eleve'];
+                $tel3=$ligne['telephone3Eleve'];
+                $tel4=$ligne['telephone4Eleve'];
+                $email=$ligne['emailEleve'];
+                $infocomp=$ligne['informationEleve'];
+                $categoryid=$ligne['idCategorie'];
+                $dateinsc=$ligne['dinscriptionEleve'];
+            }
+
+        }
+
+
 
 
         if (isset($_POST))
@@ -67,6 +123,7 @@
                 $categoryid=$_POST['hiddencategorie'];
                 $dateinsc=$_POST['dateinscription'];
 
+
                 $idee=$_POST['hidden'];
                 
 
@@ -82,9 +139,11 @@
                 idCategorie=$categoryid,
                 emailEleve='$email',
                 dinscriptionEleve='$dateinsc'
+                
+                
+                
+
                 WHERE idEleve=$idee";
-
-
                 $bdd=$ceform->baseDeDonnee();
                 $res=$bdd->query($reqinsert) or die('modification impossible');  
 
@@ -138,12 +197,6 @@
             //attribution de valeur)
             $type="modification";
 
-            
-
-
-
-            
-
 
 
             //FONCTION DE RECHERCHE GRACE A LA METHODE "afficherequetesql()" ($req=$ceform->afficherequetesql();)
@@ -178,6 +231,7 @@
                             $email=$ligne['emailEleve'];
                             $infocomp=$ligne['informationEleve'];
                             $categoryid=$ligne['idCategorie'];
+                            $dateinsc=$ligne['dinscriptionEleve'];
                             
 
 
