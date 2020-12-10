@@ -1,0 +1,358 @@
+*{
+margin:0;
+margin:0;
+}
+
+/***************************************************************************************PAGE INDEX.HTML*/
+/*Couleur de fond du body*/
+body {
+	/*background-image:url("images/fond3.jpg");*/
+	/*background-color:rgb(191 213 236);*/
+	background-color:black;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#logo {
+	position:absolute;
+	left:5px;
+	top:0px;
+}
+
+header {
+		background-color:rgb(232,232,232);
+			box-shadow:4px 4px 4px black;
+			display:grid;
+			grid-template-columns: 33% 43.33% 23.33%;
+			grid-gap:10px;
+			height:120px;
+			color:blue;
+			position:fixed;
+			top:0;
+			left:3px;
+			width:1900px;
+		}
+
+#menu ul li {
+display:inline-block;
+float:left;
+margin:30px 50px 0 50px;
+font-weight: bold;
+font-size:30px;
+
+}
+
+#inscription {
+color:blue;	
+}
+
+#inscription div .panier {
+width:50%;
+}
+
+#inscription div .personnage {
+width:34%;
+}
+
+#inscription div img {
+	position : relative;
+	top:-15px;
+}
+
+#inscription a {
+	position : relative;
+	top:-15px;
+	left:-16px;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:20px;
+	text-align:center;
+}
+
+
+
+
+#inscription div {
+float:left;
+margin:20px;
+}
+
+
+#contenant {
+	/*background-image:url("images/fond1.jpg");*/
+	/*background-color:rgb(225 225 233);*/
+	background-color:black;
+	border:1px solid black;
+	width:85%;
+	
+	margin:30px auto 0 auto;
+	border-radius:15px;
+
+}
+
+
+#cases {
+
+	display:grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	
+}
+
+.un {
+	height:400px;
+	background-color:white;
+	margin:10px 15px 0 15px;
+	
+	border-radius:5px;
+	border:0.2px solid black;
+
+}
+
+.un .cd {
+	width:48%;
+	border:1px solid black;
+	text-align:center;
+
+}
+
+.un p {
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+	margin:10px 10px;
+}
+
+
+
+.col1 {
+margin-top:50px;	
+
+}
+
+
+
+
+.col1 .prix {
+	float:left;
+	font-weight: 20px;
+	font-size:40px;
+
+}
+
+.col1 .pani {
+	width:12%;
+	float:right;
+
+}
+
+
+
+/***************************************************************************************PAGE ENTREE.HTML*/
+
+body {
+background-color:rgb(232,232,232);
+}
+
+#boite {
+	background-color:rgb(232,232,232);
+	width:900px;
+	height:700px;
+	box-shadow:5px 5px 5px black;
+	margin:auto;
+	margin-top:100px;
+	border:1px solid black;
+}
+
+
+#boite .bougimg  {
+	width:100%;
+	text-decoration: none;
+	text-align:center;
+	color:black;
+	font-size:30px;
+}
+
+#boite .bougimg p {
+margin-top:50px;
+}
+
+#boite .bougimg p span {
+font-weight:bold;
+}
+
+/*Pour center cette image je la convertis en block pour qu'elle prenne toute la largeur du contenu 'donc pour qu'elle devienne un block comme header' 
+Je peux alors la centrer avec margin:auto*/
+#boite .bougimg img {
+	display:block;
+	margin:50px auto 0 auto;
+}
+
+#boite .boutons {
+	width:250px;
+	margin:10px auto 0 auto;
+	
+}
+#boite .boutons .a1 {
+	margin-bottom:10px;
+	
+}
+
+#boite .boutons p {
+	border:1px solid black;
+	border-radius:10px;
+	background-color:blue;
+	color:white;
+	text-align:center;
+	margin-top:0px;
+	font-size:25px;
+	
+	
+	
+}
+
+#boite .boutons p a {
+	text-decoration:none;
+	color:white;
+} 
+
+/***************************************************************************************PAGE LOGIN.HTML*/
+
+
+
+
+#boite .attention  {
+	
+	
+	width:100%;
+	text-decoration: none;
+	text-align:center;
+	color:black;
+	font-size:30px;
+}
+
+#boite .attention p {
+margin-top:150px;
+}
+
+#boite .attention p span {
+font-weight:bold;
+}
+
+#boite .form {
+	width:90%;
+	margin:auto;
+}
+
+
+#boite .form form input:nth-child(-n+2) {
+	display:block;
+	font-size:30px;
+	border-radius:5px;
+	margin:50px auto 10px auto;
+	
+}
+
+
+#boite .form form input:last-child {
+	display:block;
+	font-size:30px;
+	border-radius:5px;
+	width:25%;
+	margin:0 auto 0 auto;
+}
+
+#boite #precedent a {
+	text-decoration: none;
+	border-radius:5px;
+	background-color:blue;
+	color:white;
+	margin:10px 0 0 10px;
+	font-size:30px;
+	border:2px solid black;
+
+}
+
+
+/***************************************************************************************PAGE NOUVELUTILISATEUR.HTML*/
+
+#boite .instruction1  {
+	
+	
+	width:60%;
+	text-decoration: none;
+	text-align:center;
+	color:black;
+	font-size:30px;
+	margin:auto;
+}
+
+#boite .instruction1 p {
+margin-top:50px;
+}
+
+#boite .instruction1 p span {
+font-weight:bold;
+}
+
+
+#boite .form2  {
+
+	margin:100px auto 5px auto;
+	
+}
+
+#boite .form2 form input:nth-child(-n+4) {
+	display:block;
+	font-size:30px;
+	border-radius:5px;
+	margin:15px auto 5px auto;
+	
+}
+
+
+
+
+#boite .form2 form input:last-child {
+	display:block;
+	font-size:30px;
+	border-radius:5px;
+	width:25%;
+	margin:100px auto 0 auto;
+}
+
+
+
+
+/***************************************************************************************PAGE OUBLIMDP.HTML*/
+
+
+ #boite .instruction2  {
+	
+	
+	width:60%;
+	margin:auto;
+	text-decoration: none;
+	text-align:center;
+	color:black;
+	font-size:30px;
+}
+
+#boite .instruction2 p {
+margin-top:50px;
+}
+
+#boite .instruction2 p span {
+font-weight:bold;
+}
+
+#boite .form3 form input {
+	display:block;
+	font-size:30px;
+	border-radius:5px;
+	margin:15px auto 5px auto;
+	
+}
+
+#boite .form3 {
+	margin:150px;
+}

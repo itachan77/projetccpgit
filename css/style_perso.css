@@ -1,0 +1,271 @@
+*{
+    margin:0;
+    padding:0;
+    }
+    
+    body{
+    
+    }
+    
+    #contenir
+        {
+        width:1900px;
+        height:1400px;
+        font-family:arial;
+        margin:50px auto 0 auto;
+        }                    
+    
+    #le_formulaire {
+    width:80%;
+    margin:auto;
+    
+    }
+    
+    #le_formulaire:first-child {
+                        
+        background-image:url(../images/background2.png);
+        background-repeat:repeat;
+        
+        border:1px solid black;
+        border-radius:20px;
+        box-shadow:10px;
+        }
+            
+    .legend-global-formulaire {
+    font-size:35px;
+    font-weight: bold;
+    text-align:center;
+    margin-bottom:20px;
+    }                    
+    
+    .select_cours {
+    display:block;
+    
+    margin:0px auto auto auto;
+    text-align:center;
+    font-size:25px;
+    font-weight: bold;
+    }
+    
+    /*                     
+    .div_legend_cours{
+    width:25%;
+    margin:30px auto 2px auto;
+    }
+     */
+    
+    
+    .legendcategorie {
+    font-size:15px;
+    margin-bottom:0px;
+    text-align:center;
+    
+    }
+    
+    .legendeleve {
+    font-weight:bold;
+    font-size:1.3em;
+    /*color:#FF00FF;*/
+    color:black;
+    background-color:white;
+    }
+    
+                        
+    .categorie {
+    font-size:20px;
+    
+    }
+    
+    .divfieldset fieldset{
+    width:355px;
+    border-radius:10px;
+    margin-top:40px;
+    }
+    
+    
+    .divfieldset fieldset input {
+    
+    margin-bottom:2px;
+    
+    }
+    
+    /* il faut donner une grande largeur à label pour que les champs input soient bien alignés après les avoir converti en display block */
+    .divfieldset fieldset label { 
+    display:inline-block;
+    width:90px;
+    }
+    
+    .pinstrument {
+        color:blue;
+        font-weight:bold;
+    }
+    
+    .divfieldset_question {
+        width:35%;
+    }
+    
+    .divfieldset_question fieldset{
+    
+        border-style:inset;
+        border-color:black;
+        border-style:dotted;
+        }
+    
+    .divfieldset_question fieldset label {
+        display:inline-block;
+        width:130px;
+        
+    }
+    
+    .divfieldset_search fieldset {
+        margin-top:30px;
+        background-image:url('../images/bas.png')
+    }
+    
+    .divfieldset_search .gridendeux {
+    width:60%;
+        display:grid;
+    grid-template-columns:50% 50%;
+    
+        
+    }
+    
+    
+    .divfieldset_search .width60 {
+        
+        margin-top:10px;
+    }
+    
+    .divfieldset_search .c1 {
+        display:block;
+        width:30%;
+        margin:auto;
+    
+            
+        }
+    
+    .divfieldset_search .gridendeux .a1 label, .b1 label, .c1 label {
+        display:inline-block;
+        width:130px;
+        font-size:15px;
+        font-weight: bold;
+    }
+    
+    .divfieldset_search .gridendeux input {
+        margin-bottom:2px;
+    }
+    
+    .divfieldset_search .c1 input[value="RECHERCHER"] {
+        display:block;
+        margin:2px auto 10px auto;
+        font-size:13px;
+        font-weight:bold;
+        padding:2px;
+        width:150px;
+        border-radius:5px;
+        box-shadow:2px 1px 1px black;
+    }
+    
+    .divfieldset_search .c1 input[value="Précédent"], .c1 input[value="Suivant"]  {
+        display:block;
+        margin:2px auto 10px auto;
+        font-size:13px;
+        font-weight:bold;
+        padding:2px;
+        width:100px;
+        border-radius:5px;
+        box-shadow:2px 1px 1px black;
+    }
+    
+    .divfieldset_search .c1 .suivprec {
+        display:flex;
+    }
+    
+    #mesblocs{
+    margin:auto;
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap:5px;
+    
+    }
+    
+    #mesblocs label{
+    font-size:15px;
+    font-weight: bold;
+        }
+    
+    #part2 .labelquestion {
+    width:180px;
+    }
+    
+    #part2 .instr1 {
+    margin-top:10px;
+        }
+    
+    #part3 input[type="submit"],input[type="button"] {
+        display:block;
+        margin:2px auto 10px auto;
+        font-size:13px;
+        font-weight:bold;
+        padding:2px;
+        width:250px;
+        border-radius:5px;
+        box-shadow:2px 1px 1px black;
+    }
+    
+    #part3 .boutonscreer input {
+        display:block;
+        margin:2px auto 10px auto;
+        font-size:13px;
+        font-weight:bold;
+        padding:2px;
+        width:150px;
+        border-radius:5px;
+        box-shadow:2px 1px 1px black;
+        
+    }
+
+
+    #part3 .divfieldset .courriel:hover #part4 #part2 {
+        display: none;
+    }
+    
+    .divfieldset .a1 input[name="nom"]{
+        font-size:25px;
+        color:blue;
+        width:200px;
+        font-weight:bold;
+    }
+    
+    .divfieldset .a input[name="prenom"]{
+        font-size:20px;
+        width:200px;
+    }
+    .divfieldset .b input[name="naissance"]{
+        font-size:15px;
+        font-weight:bold;
+        width:150px;
+    }
+    .divfieldset .b input[name="calcage"]{
+        width:40px;
+    }
+    
+    .divfieldset .c input[name="adresse"]{
+        width:250px;
+    }
+    
+    .divfieldset .d select[name="cpville"] {
+        width:252px;
+    }
+    
+    .divfieldset .g input[name="email"]{
+        width:250px;
+    }
+    
+    .divfieldset input{
+        width:120px;
+    }
+    
+    
+    
+    
