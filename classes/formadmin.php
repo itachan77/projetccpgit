@@ -114,10 +114,10 @@ public $champtab=array();
     
         
         echo '
-    <form action="'.$action.'" method="POST" name="formulaire_admin" enctype="application/x-www-form-urlencoded">
-                    
-                        <legend class="legend-global-formulaire">'.$titre.'</legend>
-                        <a style="text-align:center;" href="liste.php">Mode liste</a>
+        <form action="'.$action.'" method="POST" name="formulaire_admin" enctype="application/x-www-form-urlencoded">
+                                    
+        <legend class="legend-global-formulaire">'.$titre.'</legend>
+                
                     <div id="mesblocs">      
                         
                             <div id="part1">
@@ -217,12 +217,11 @@ public $champtab=array();
 
                             <div id="part2">
 
-                            <div class="divfieldset">
+                                <div class="divfieldset">
                                     <fieldset>
-                                        <legend class="legendeleve">Dernier règlement</legend>
-                                            <div class="boutonscreer">
-
-                                            <input type="text" name="reglem" id="reglem" value="60 €"><br>
+                                        <legend class="legendeleve">Date d\'inscription</legend>
+                                        <input type="date" name="dateinscription" id="dateinscription" value="'.$dateinsc.'"><br>
+                                            
                                     </fieldset>
                                 </div>
                                 
@@ -252,6 +251,7 @@ public $champtab=array();
                                             <div class="instr1">
                                             <p class="pinstrument">Quel instrument souhaiteriez-vous posséder ?</p>
                                             <input type="text" name="souhaiter" id="souhaiter">
+                                            </div>
 
                                     </fieldset>
 
@@ -284,147 +284,159 @@ public $champtab=array();
                                 <div class="divfieldset">
                                     <fieldset>
                                         <legend class="legendeleve">Informations supplémentaires</legend>
-                                        <textarea name="infocomp" id="infocomp" cols="40" rows="16" value="infocomp" maxlenght="500">'.$infocomp.'</textarea>
+                                        <textarea name="infocomp" id="infocomp" cols="47" rows="32" value="infocomp" maxlenght="500">'.$infocomp.'</textarea>
                                         
-
-                                    </fieldset>
-                                </div>
-
-                                <div class="divfieldset">
-                                    <fieldset>
-                                        <legend class="legendeleve">Un ID et un MDP ont été générés</legend>
-                                        <textarea name="generation" id="generation" cols="40" rows="10"></textarea>
-
                                     </fieldset>
                                 </div>
 
                             </div>
-
-
-                            <div id="part3">
-                                <div class="divfieldset">
-                                    <fieldset>
-                                        <legend class="legendeleve">Date d\'inscription</legend>
-                                        <input type="date" name="dateinscription" id="dateinscription" value="'.$dateinsc.'"><br>
-                                            
-                                    </fieldset>
-                                </div>
-
-
-                                <div class="divfieldset">
-                                    <fieldset>
-                                        <legend class="legendeleve">Paramètres</legend>
-                                            
-
-                                            <a href="formulaire.php">RECHERCHER UNE FICHE</a><br>
-
-                                            <a href="nvformulaire.php">CREER UNE FICHE</a>
-                                            <input class="b1" type="submit" name="creation" id="toutselec" value="Créer une fiche"></br>
-                                            
-                                            
-                                            <input type="submit" name="modifierFiche" id="modifierFiche" value="Modifier cette fiche"></br>
-                                            
-                                            
-                                            
-                                            <a href="   formulaire.php?p='.$id.'">SUPPRIMER CETTE FICHE</a>
-                                            
-
-                                            <details>
-                                                <summary style="background-color:red;"><input type="button" name="autrerecherche" value="RECHERCHER"></summary>
-
-                                                <div class="divfieldset_search">
-                                                <fieldset>
-                                                    <legend class="legendeleve">Rechercher un élève par</legend>
-                                                        <div class="gridendeux">
-                                                            <div class="a1">
-                                                                <div>
-                                                                <label class="rechnom" for="rechnom">Nom</label>
-                                                                <input type="search" name="rechnom" id="rechnom" size="30%">
-                                                                </div>  
-                                                                
-                                                                <div>
-                                                                <label class="rechprenom" for="rechprenom">Prénom</label>
-                                                                <input type="search" size="30%" name="rechprenom">
-                                                                </div>
-                            
-                                                                <div>
-                                                                <label class="rechadresse" for="rechadresse">Adresse</label>
-                                                                <input type="search" size="30%" name="rechadresse">
-                                                                </div>
-                                                            </div>
-                            
-                                                            <div class="b1">
-                                                                <div>
-                                                                <label class="rechinscrip" for="rechinscrip">Date d\'inscription</label>
-                                                                <input type="search" size="30%" name="rechinscrip">
-                                                                </div>
-                            
-                                                                <div>
-                                                                <label class="rechemail" for="rechemail">Courriel</label>
-                                                                <input type="search" size="30%" name="rechemail">
-                                                                </div>
-                            
-                                                                <div>
-                                                                <label class="rechcodepostal" for="rechcodepostal">Code postal</label>
-                                                                <input type="search" size="30%" name="rechcodepostal">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                            <div class="width60">
-                                                                <div class="c1">
-                                                                    <div>
-                                                                    
-                                                                    <input type="submit" name="recherche" id="maRecherche" value="RECHERCHER">
-                                                                    
-                                                                    
-                                                                    </div>
-                                                                    
-                                                                    <div class="suivprec">
-                                                                    <input type="button" name="precedent" id="precedent" value="Précédent">
-                                                                    <input type="button" name="suivant" id="suivant" value="Suivant">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        
-                                                </fieldset>
-                                                        
-                                            </div>
-                                                <div class="suivprec">
-                                                <input type="button" name="precedent" id="precedent" value="Précédent">
-                                                <input type="button" name="suivant" id="suivant" value="Suivant">
-                                                </div>
-                                                
-                                            </details>
-
-                                            
-                                    </fieldset>
-                                </div>
-
-                                <div class="divfieldset">
-                                    <fieldset>
-                                        <legend class="legendeleve">Créer et Envoyer</legend>
-                                            
-                                            <!-- class boutonscreer dans input qui permet de modifier ces boutons de manière personnalisée -->
-                                            <div class="boutonscreer">
-                                                <input class="lettre" type="button" name="lettre" id="lettre" value="Lettre">
-                                                <input class="courriel" type="submit" name="courriel" id="courriel" value="Courriel">
-                                                <input class="enveloppe" type="button" name="enveloppe" id="enveloppe" value="Enveloppe">
-                                                <input class="sms" type="button" name="sms" id="sms" value="SMS">
-                                            </div>
-
-                                    </fieldset>
-                                </div>
-
-
-                            </div>
-
-
 
                     </div>
 
-                    
+                
+</div>            
+</div>
+</div>
 
-                </form>
+
+
+<div id="part3">
+
+<details>
+    <summary><legend class="legendeparametres">MON APPLICATION</legend></summary>
+        <div class="divfieldsetp">
+            <fieldset>
+            <a href="theme.php">CHOISIR UN THEME</a>
+            </fieldset>
+        </div>
+</details>
+
+
+<details>
+    <summary><legend class="legendeparametres">MODE AFFICHAGE</legend></summary>
+        <div class="divfieldsetp">
+            <fieldset>
+
+            
+            <div>
+            <div id="mode_liste"><a style="text-align:center;" href="liste.php">Mode liste</a></div>
+            <div id="mode_form"><a style="text-align:center;" href="liste.php">Mode formulaire</a></div>
+            </div>
+
+            </fieldset>
+        </div>
+</details>
+
+            
+
+
+<details>
+    <summary><legend class="legendeparametres">ACTIONS</legend></summary>
+        <div class="divfieldsetp">
+            <fieldset>
+
+            <!-- class boutonscreer dans input qui permet de modifier ces boutons de manière personnalisée -->
+            <div class="action_submit">
+                <a href="nvformulaire.php">AJOUTER UN ELEVE</a>
+                <input class="b1" type="submit" name="creation" id="toutselec" value="Valider"></br>
+                
+                <a href="formulaire.php?p='.$id.'">SUPPRIMER CET ELEVE</a>
+            </div>
+
+            </fieldset>
+        </div>
+</details>
+
+
+
+<details>
+    <summary><legend class="legendeparametres">CREER ET ENVOYER</legend></summary>
+        <div class="divfieldsetp">
+            <fieldset>
+                
+                    
+                    <!-- class boutonscreer dans input qui permet de modifier ces boutons de manière personnalisée -->
+                    <div class="boutonscreer">
+                        <input class="lettre" type="button" name="lettre" id="lettre" value="Lettre">
+                        <input class="courriel" type="submit" name="courriel" id="courriel" value="Courriel">
+                        <input class="enveloppe" type="button" name="enveloppe" id="enveloppe" value="Enveloppe">
+                        <input class="sms" type="button" name="sms" id="sms" value="SMS">
+                    </div>
+            </fieldset>
+        </div>
+</details>
+
+
+
+
+<details>
+    <summary><legend class="legendeparametres">RECHERCHER</legend></summary>   
+        <div class="divfieldsetp">
+            <fieldset>    
+        
+
+                <a href="formulaire.php">RECHERCHER UNE FICHE</a><br>
+                
+                            <div class="gridendeux">
+                                <div class="a1">
+                                    <div>
+                                    <label class="rechnom" for="rechnom">Nom</label>
+                                    <input type="search" name="rechnom" id="rechnom" size="30%">
+                                    </div>  
+                                    
+                                    <div>
+                                    <label class="rechprenom" for="rechprenom">Prénom</label>
+                                    <input type="search" size="30%" name="rechprenom">
+                                    </div>
+
+                                    <div>
+                                    <label class="rechadresse" for="rechadresse">Adresse</label>
+                                    <input type="search" size="30%" name="rechadresse">
+                                    </div>
+                                </div>
+
+                                <div class="b1">
+                                    <div>
+                                    <label class="rechinscrip" for="rechinscrip">Date d\'inscription</label>
+                                    <input type="search" size="30%" name="rechinscrip">
+                                    </div>
+
+                                    <div>
+                                    <label class="rechemail" for="rechemail">Courriel</label>
+                                    <input type="search" size="30%" name="rechemail">
+                                    </div>
+
+                                    <div>
+                                    <label class="rechcodepostal" for="rechcodepostal">Code postal</label>
+                                    <input type="search" size="30%" name="rechcodepostal">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="width60">
+                                    <div class="c1">
+                                        <div>
+                                        
+                                        <input type="submit" name="recherche" id="maRecherche" value="RECHERCHER">
+                                        
+                                        
+                                        </div>
+                                        
+                                        <div class="suivprec">
+                                        // <input type="button" name="precedent" id="precedent" value="Précédent">
+                                        <input type="button" name="suivant" id="suivant" value="Suivant">
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                    
+                            
+                </div>
+                
+            </fieldset>
+        </div> 
+</details>
+
+    </form>
 
     ';
 
@@ -571,17 +583,23 @@ public $champtab=array();
 
 
 
-    public function categorie_in_formu($category,$categoryid) //MARCHE**** Affiche toutes les catégories de ma base de données
+    public function categorie_in_formu($category,$categoryid) //MARCHE**** Affiche toutes les catégories de ma base de données dans un formulaire de type liste
     {
         
         $this->connecte_toiBdformadmin ();
         
+        //RECHERCHE DE LA CATEGORIE A PARTIR DE LA TABLE CATEGORIE
         $req="SELECT nomCategorie, idCategorie FROM t_categorie"; 
-        
-
         $resultat=$this->bdd->query($req); 
         $tabcategorie=$resultat->fetch(PDO::FETCH_ASSOC) or die('requete impossible');
         
+
+
+
+
+
+
+
         $html='';
 
             // while ($tabcategorie=$resultat->fetch(PDO::FETCH_ASSOC) ) 
@@ -593,12 +611,18 @@ public $champtab=array();
 
             while ($tabcategorie=$resultat->fetch(PDO::FETCH_ASSOC) ) 
             {
-                
-                extract($tabcategorie);
+
+                $nomCategorie=$tabcategorie['nomCategorie'];
+                $idCategorie=$tabcategorie['idCategorie'];
+
                 if ($idCategorie==$categoryid){$selected="selected";}
                 else {$selected="";}
+//$html.='<option value="'.$nomCategorie.'"'.$selected.'>'.$idCategorie.' '.$nomCategorie.'</option>';
 
-                        $html.='<option value="'.$nomCategorie.'"'.$selected.'>'.$nomCategorie.'</option>';
+//lors du post, c'est la valeur qu'il ya  écrit dans l'attribut value qui va être prise en compte. 
+//Puisqu'on  ne peut faire autrement que d'attribuer uen valeur numérique à idCatégorie de la table t_eleve, il faut donc que 
+// value soit une valeur numérique et non alpha sinon il y aura toujours une erreur (car un id ne peut être alphabétique)
+                        $html.='<option value="'.$idCategorie.'"'.$selected.'>'.$nomCategorie.'</option>';
                     
 
                 
