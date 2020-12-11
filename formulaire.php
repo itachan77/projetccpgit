@@ -298,20 +298,21 @@ echo '<pre>'.print_r($_POST,true).'</pre>';
 
 
 
-
-    <div id="contenir">
-
-        <div id="le_formulaire">
-            <?php 
+<div id="pourParametres">
+    <div id="conteneur_bois">
+        <div id="contenir">
+            <div id="le_formulaire">
+                <?php 
             
             
             $ceform->afficher_formulaire($dateinsc,$categoryid,$id,$titre,$action,$nom,$prenom,$adresse,$tel1,$tel2,$tel3,$tel4,$email,$prevnom,$prevprenom,$prevadresse,$prevcpville,$prevetel,$category,$infocomp,$type);
 
             ?>
 
+            </div>
         </div>
-
     </div>
+</div>
 
 
 </body>
